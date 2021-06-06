@@ -60,7 +60,9 @@
             @include('layouts.admin.footermenu')
 
 
-          @include('layouts.admin.footer')
+            @include('layouts.admin.footer')
+
+
 
     </body>
 
@@ -97,6 +99,10 @@
         minScrollbarLength: 20,
 
       });
+
+      $(document).ready(function() {
+        $('.mdb-select').materialSelect();
+    });
 
 
 

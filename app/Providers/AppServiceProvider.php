@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Mainmenu;
+use App\Models\Submenu;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -28,7 +30,17 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 
+
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
+
+        view()->composer(['layouts.*'], function ($view) {
+            $view->with('mainmenu', Mainmenu::orderBy('serial', 'asc')->get());
+        });
+
+        view()->composer(['layouts.*'], function ($view) {
+            $view->with('submenu', Submenu::orderBy('serial', 'asc')->get());
+        });
+
     }
 }

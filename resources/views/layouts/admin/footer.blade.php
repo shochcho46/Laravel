@@ -1,5 +1,6 @@
 <!-- Footer -->
-<footer class="page-footer font-small mdb-color pt-4">
+<div class="row mt-5"></div>
+<footer class="page-footer font-small mdb-color pt-4 mt-4">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
